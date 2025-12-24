@@ -1,12 +1,6 @@
-from rest_framework import routers
-from django.urls import path, include
-from .views import ListingViewSet, BookingViewSet
-
-router = routers.DefaultRouter()
-router.register(r'listings', ListingViewSet)
-router.register(r'bookings', BookingViewSet)
+from django.urls import path
+from . import views
 
 urlpatterns = [
-    path('api/', include(router.urls)),
+    path("", views.home, name="home"),
 ]
-
